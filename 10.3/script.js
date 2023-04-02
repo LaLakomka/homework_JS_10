@@ -45,10 +45,8 @@ function pageLoaded() {
   const success = (position) => {
     let latitude  = position.coords.latitude;
     let longitude = position.coords.longitude;
-    let geoLink = `<a href = 'https://www.openstreetmap.org/#map=18/${latitude}/${longitude} target='_blank' 
-    style = 'background: #1b8a1b; align-self: flex-end; max-width: 80%;
-    padding: 5px 10px; margin: 5px 0; border-radius: 3px;
-    color: #fff;' )>Ваша гео-локация</a>`;
+    let geoLink = `<div class = "geoLink"><a href ='https://www.openstreetmap.org/#map=18/${latitude}/${longitude} target='_blank'> 
+    Ваша гео-локация</a><div/>`;
     chatOutput.innerHTML += geoLink;
     infoOutput.innerText = `Широта: ${latitude} °, Долгота: ${longitude} °`;
   };
@@ -72,4 +70,3 @@ function pageLoaded() {
   
 
 document.addEventListener("DOMContentLoaded", pageLoaded);
-
